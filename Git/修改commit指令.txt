@@ -1,0 +1,23 @@
+GIT_COMMITER_DATE="Sat Jul 16 23:00:00 2022 +0800" git commit --amend --date "Web Jul 13 11:30:00  2022 +0800"
+
+星期一 Monday	简写为Mon
+星期二 Tuesday 	简写为Tue
+星期三 Wednesday	简写为Wed
+星期四 Thursday 	简写为Thu
+星期五 Friday 	简写为Fri
+星期六 Saturday 	简写为Sat
+星期日 Sunday 	简写为Sun
+
+英文月份缩写：
+—月份January	Jan
+二月份february	Feb
+三月份March	Mar
+四月份April	Apr
+五月份May	May
+六月份June	Jun
+七月份July	Jul
+八月份August	Aug
+九月份September	Sep
+十月份October	Oct
+十—月份November	Nov
+十二月份December	Dec
