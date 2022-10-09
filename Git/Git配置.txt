@@ -12,4 +12,9 @@ $ git config --global core.editor vim
 或使用64位的Notepad++
 $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
 
+生成Git密钥
+进入到user文件夹下的\.ssh
+$ ssh-keygen -t rsa
+用文本编辑器打开.pub文件，复制到Github设置中
+
 
