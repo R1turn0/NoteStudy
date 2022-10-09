@@ -1,0 +1,15 @@
+Git配置
+
+打开Git Bash，输入
+$ git config --global user.name "your_name"
+$ git config --global user.email "your_email"
+
+输入查看Git所有配置以及他们所在的文件
+$ git config --list --show-origin
+
+更改Git的文本编辑器
+$ git config --global core.editor vim
+或使用64位的Notepad++
+$ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+
+
