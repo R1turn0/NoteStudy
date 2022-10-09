@@ -21,3 +21,37 @@ GIT_COMMITER_DATE="Sat Jul 16 23:00:00 2022 +0800" git commit --amend --date "We
 十月份October	Oct
 十—月份November	Nov
 十二月份December	Dec
+
+
+Git删除commit记录可以使用
+$ git rebase
+$ git rebase -i "commit_id"[^]//指数符号^是定位到commit id的上一次
+
+
+1.查看最后一次提交记录的修改文件信息
+ git show --raw
+
+2.查看指定commit id对应修改文件列表
+git show --raw commit_id
+git show --raw 2f80f1c8bb2cb8e91d22ad38480b681c194f6518
+
+3.查看所有提交记录的修改文件信息
+git log --stat
+git log --name-only
+
+4.查看所有修改相关的commit ID和comment信息
+git log --pretty=oneline
+
+5.查询指定author的修改信息
+git log --author=jack.li
+
+6.查看指定author在指定时间修改信息
+$ git log --pretty="%h - %s" --author='Junio C Hamano' --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/
+5610e3b - Fix testcase failure when extended attributes are in use
+acd3b9e - Enhance hold_lock_file_for_{update,append}() API
+f563754 - demonstrate breakage of detached checkout with symbolic link HEAD
+d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
+51a94af - Fix "checkout --track -b newbranch" on detached HEAD
+b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unborn branch
+
