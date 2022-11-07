@@ -1,0 +1,14 @@
+列出所有分支
+$ git branch -a
+
+创建分支
+$ git branch dev
+
+切换分支
+$ git checkout dev
+
+合并dev分支到master
+$ git merge dev
+
+删除dev分支
+$ git branch -d dev

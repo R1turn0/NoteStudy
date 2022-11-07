@@ -17,4 +17,11 @@ $ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -m
 $ ssh-keygen -t rsa
 用文本编辑器打开.pub文件，复制到Github设置中
 
+启动ssh链接
+$ ssh-agent.exe
 
+手动添加私钥文件
+$ ssh-add ~/.ssh/R1turn0
+
+测试能否ssh到github
+$ ssh -T git@github.com
