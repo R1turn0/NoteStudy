@@ -3,7 +3,7 @@ cmd>mysqld --install
 Service successfully installed.
 
 2. 安装mysql的服务
-cmd>mysqld --initiallize --console
+cmd>mysqld --initialize --console
 ...root@localhost: ******
 
 3. 开启MySQL服务
