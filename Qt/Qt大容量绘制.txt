@@ -1,0 +1,58 @@
+void MainWindow::setDataToHouse(QString &str)
+{
+    int Maxsize = mwarehouse.size();
+    if(str.size()>=Maxsize)
+    {
+        mwarehouse= str;
+        return;
+    }
+    QString test = mwarehouse.mid(str.size(),-1);
+    mwarehouse.replace(0,Maxsize-str.size(),mwarehouse.mid(str.size(),-1));
+    mwarehouse.replace(Maxsize-str.size(),str.size(),str);
+}
+
+
+void MainWindow::showScrollContent(bool up)
+{
+    int Maxsize = mwarehouse.size();
+    uint tmpsize = getScrollshowAreaSize();
+    uint cursize = mtextedit->toPlainText().size();
+    if(up)
+    {
+        if(cyclesnum<mlinenum){return;}
+        mupnum+=tmpsize;
+        cyclesnum-=  (mlinenum*2-1);
+    }
+    else{
+        if(mupnum<tmpsize)
+        {
+           mupnum=0 ;
+           return;
+        }
+        mupnum-=cursize;
+    }
+    QString allowString = mwarehouse.mid(Maxsize-tmpsize-mupnum,tmpsize);
+    showString(allowString);
+}
+
+
+void MainWindow::showString(QString mess,bool cyc )
+{
+        if(cyc)
+        {
+            uint cycles = (mess.size())/(mlinenumsize);
+            qDebug()<<"!!!!!"<<cycles;
+            if(cycles>0)
+            {
+                for (uint i = 0;i<cycles ;++i ) {
+                    showAllString(mess.mid(i*mlinenumsize,mlinenumsize));
+                }
+                mess = mess.mid(cycles*mlinenumsize,mess.size()-cycles*mlinenumsize);
+            }
+        }
+        mtextedit->append(mess);
+        ui->tb_linenum->append(QString::number(cyclesnum++));
+}
+
+
+https://www.jb51.net/article/249632.htm
