@@ -1,0 +1,1 @@
+regedit -> HKY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform -> SoftwareProtectionPlatfrom -> BackupProductKeyDefaul 的就是office的的产品密钥了
