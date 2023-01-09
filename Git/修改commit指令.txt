@@ -1,4 +1,4 @@
-GIT_COMMITER_DATE="Sat Jul 16 23:00:00 2022 +0800" git commit --amend --date "Web Jul 13 11:30:00  2023 +0800"
+GIT_COMMITER_DATE="Sat Jul 16 23:00:00 2022 +0800" git commit --amend --date "Sun Jan 1 11:30:00  2023 +0800"
 
 星期一 Monday       简写为 Mon
 星期二 Tuesday      简写为 Tue
