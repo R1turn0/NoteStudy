@@ -100,3 +100,18 @@ $ ssh -vT git@github.com
 $ ssh -vT git@aa.github.com 
 $ ssh -vT git@bb.github.com 
 
+
+Permission denied (publickey).
+打开命令行。
+
+在后台启动 SSH 代理。
+
+$ ssh-agent -s
+> Agent pid 59566
+查找并记下您的公钥指纹。
+
+$ ssh-add -l -E sha256
+> 2048 SHA256:274ffWxgaxq/tSINAykStUL7XWyRNcRTlcST1Ei7gBQ /Users/USERNAME/.ss
+
+对比GitHub设置中公钥指纹是否一致
+https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
