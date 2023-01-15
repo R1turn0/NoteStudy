@@ -2,7 +2,7 @@
 
 ## 1. 描述
 
-![Elite4s异常_AnInvalidHandleWasSpecified](D:\WorkSpace\Error\Cpp\0xC0000008_AnInvalidHandleWasSpecified\Elite4s异常_AnInvalidHandleWasSpecified.png)
+![Elite4s异常_AnInvalidHandleWasSpecified](.\Elite4s异常_AnInvalidHandleWasSpecified.png)
 
 异常引发之后无论是点击“继续”或者“忽略”都能继续运行，不会崩溃，再次单击打开结点时候又会弹出相同的异常。。。
 但是直接找到工程目录下的exe文件（无论是Debug还是Release）都能够正常运行，或者是Ctrl + F5，说明只有调试的时候才会显示这个错误。 
