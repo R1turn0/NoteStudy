@@ -121,7 +121,7 @@ void Push(LNode * s, stack x)
         
     }
 }
-void Pop(LNode * s)
+void Pop(LNode* s)
 {
     if (IsEmpty(s)){
         printf("栈为空，不能进行出栈操作!\n");
@@ -129,7 +129,7 @@ void Pop(LNode * s)
     }
     s->top--;
 }
-int IsFull(LNode * s)
+int IsFull(LNode* s)
 {
     if (s->top >= M * N){
         return 1;
