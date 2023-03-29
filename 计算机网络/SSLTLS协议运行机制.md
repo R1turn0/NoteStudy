@@ -68,7 +68,7 @@ SSL/TLS协议的基本思路是采用公钥加密法，也就是说，客户端�
 
 ### 四、握手阶段的详细过程
 
-![SSLTLS协议运行机制_握手](.\SSLTLS协议运行机制_握手.png)
+![SSLTLS协议运行机制_握手]([.\SSLTLS协议运行机制_握手.png]https://github.com/R1turn0/NoteStudy/blob/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/SSLTLS%E5%8D%8F%E8%AE%AE%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6_%E6%8F%A1%E6%89%8B.png)
 
 “握手阶段”的所有通信都是明文
 
