@@ -13,6 +13,12 @@ cmake_minimum_required(VERSION 3.0)
 # 项目名称
 project(MainProject)
 
+# 设置可执行文件的输出路径
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# 设置动态库的输出路径
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+
 # 添加子项目1
 add_subdirectory(subproject1)
 
