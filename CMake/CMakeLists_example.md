@@ -4,6 +4,11 @@
 
 ```
 cmake_minimum_required(VERSION 3.24)
+
+# 设置以Clang(++)构建项目
+#SET(CMAKE_C_COMPILER /usr/bin/clang)
+#SET(CMAKE_CXX_COMPILER /usr/bin/clang++) 
+
 project(Project_Name)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -16,8 +21,10 @@ set(CMAKE_CXX_STANDARD 11)
 
 # set platform
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+	message(STATUS "Building for 64-bit architecture")
     set(PLATFORM x64)
 else()
+	message(STATUS "Building for 32-bit architecture")
     set(PLATFORM x86)
 endif()
 
