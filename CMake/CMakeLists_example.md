@@ -28,6 +28,18 @@ else()
     set(PLATFORM x86)
 endif()
 
+# Judgment to build project system
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    message(STATUS "Building on Linux")
+    # 添加你在 Linux 构建时需要执行的操作
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    message(STATUS "Building on Windows")
+    # 添加你在 Windows 构建时需要执行的操作
+else()
+    message(STATUS "Building on an unsupported system: ${CMAKE_SYSTEM_NAME}")
+    # 可以根据需要添加其他系统的处理
+endif()
+
 set(ROOTDIR ${CMAKE_SOURCE_DIR})
 
 link_directories(${CMAKE_SOURCE_DIR}/lib/${PLATFORM})
