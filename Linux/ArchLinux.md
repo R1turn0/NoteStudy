@@ -1,7 +1,5 @@
 文章摘要自https://zhuanlan.zhihu.com/p/596227524
 
-![Arch Linux 详细安装教程，萌新再也不怕了！「2023.10」](https://pic1.zhimg.com/70/v2-43065dacac385326fcba94b4fddd8c61_1440w.image?source=172ae18b&biz_tag=Post)
-
 # Arch Linux 详细安装教程，萌新再也不怕了！「2023.10」
 
 目录
@@ -24,7 +22,11 @@ Arch Linux 是一个轻量、灵活、滚动更新的 Linux 发行版，适合�
 - [Arch Linux 中文论坛](https://link.zhihu.com/?target=https%3A//bbs.archlinuxcn.org/) 及 [Arch Linux 中文社区交流群](https://link.zhihu.com/?target=https%3A//www.archlinuxcn.org/archlinuxcn-group-mailling-list/)
 - 本文评论区
 
-## 1 获取安装镜像
+[TOC]
+
+
+
+## 1. 获取安装镜像
 
 安装镜像是我们安装 Arch Linux 的工具，其中包含了一个 Arch Linux live 系统。该系统功能十分强大，不仅可以用于安装系统，也可用于抢救系统。要查看安装镜像中包含的软件包，请前往 [pkglist.x86_64.txt](https://link.zhihu.com/?target=https%3A//geo.mirror.pkgbuild.com/iso/latest/arch/pkglist.x86_64.txt)。
 
@@ -46,7 +48,7 @@ archlinux-2023.10.14-x86_64.iso
 
 [https://mirrors.bfsu.edu.cn/archlinux/iso/latest/archlinux-2023.10.14-x86_64.iso](https://link.zhihu.com/?target=https%3A//mirrors.bfsu.edu.cn/archlinux/iso/latest/archlinux-2023.10.14-x86_64.iso)
 
-## 2 验证镜像
+## 2. 验证镜像
 
 为确保下载的文件没有损坏，需要计算文件的 SHA256 值。
 
@@ -65,7 +67,7 @@ archlinux-2023.10.14-x86_64.iso
 SHA256: 292269ba9bf8335b6a885921a00d311cdc1dcbe9a1375f297f7f3ecfe31c36a7
 ```
 
-## 3 准备安装介质
+## 3. 准备安装介质
 
 笔者推荐使用 U 盘作为安装介质，制作工具是 [Ventoy](https://link.zhihu.com/?target=https%3A//www.ventoy.net/)。Ventoy 是一个制作可启动 U 盘的开源工具。有了它就可以无需反复格式化 U 盘，只需将镜像文件复制到 U 盘中就可以启动它。
 
@@ -96,7 +98,7 @@ Ventoy2Disk.exe
 
 制作完成后，U 盘可正常使用，可以把备份的文件复制回原来的位置。
 
-## 4 虚拟机安装前的准备
+## 4. 虚拟机安装前的准备
 
 虚拟机可以通过软件模拟一个具有完整硬件功能的隔离的计算机系统。在虚拟机内安装系统不会影响到实体机。即使出现失误，也只需销毁虚拟机重新安装，非常适合初学者学习。笔者推荐使用开源的 VirtualBox 虚拟机。
 
@@ -123,7 +125,7 @@ Ventoy2Disk.exe
 1. VirtualBox 官方网站 [https://www.virtualbox.org/](https://link.zhihu.com/?target=https%3A//www.virtualbox.org/)
 2. 笔者将写作一篇文章，介绍在虚拟机中安装 Arch Linux 之前的准备，敬请期待。
 
-## 5 双系统安装前的必要配置
+## 5. 双系统安装前的必要配置
 
 如果您希望即将安装的 Arch Linux 与已有的 Windows 共存，请继续阅读；如果您希望只保留新安装的 Arch Linux，删除现有的 Windows 系统，请跳过此步。
 
@@ -169,7 +171,7 @@ reg add "HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation
 
 如果您需要更多功能，包括在两个系统中使用蓝牙连接同一个设备[[7\]](https://zhuanlan.zhihu.com/p/596227524#ref_7)等，[请查看 ArchWiki](https://link.zhihu.com/?target=https%3A//wiki.archlinux.org/title/Dual_boot_with_Windows)，进行进一步设置。
 
-## 6 启动安装环境
+## 6. 启动安装环境
 
 安装工具制作完成，现在可以启动安装环境，开始安装了。
 
@@ -200,7 +202,7 @@ https://wiki.archlinux.org/title/Installation_guide
 
 从现在开始，安装过程将在终端中进行。请做好准备，耐心而谨慎地键入命令。只要您按照指导一步步完成，就能走到最后的终点。
 
-## 7 设置终端键盘布局和字体
+## 7. 设置终端键盘布局和字体
 
 ### 7.1 Linux 命令简介
 
@@ -255,7 +257,7 @@ root@archiso ~ # setfont ter-132b
 
 **建议您记住刚刚选择的字体，配置系统时会用到。**
 
-## 8 验证启动模式
+## 8. 验证启动模式
 
 本文开始时提到，您的电脑必须在 UEFI 模式下启动，现在验证您的启动模式。
 
@@ -271,7 +273,7 @@ root@archiso ~ # cat /sys/firmware/efi/fw_platform_size
 
 [以官方Wiki的方式安装ArchLinuxwww.viseator.com/2017/05/17/arch_install/![img](https://pic3.zhimg.com/v2-b6ecf8ca25f7a237fe262a4f66a4fcbe_ipico.jpg)](https://link.zhihu.com/?target=https%3A//www.viseator.com/2017/05/17/arch_install/)
 
-## 9 连接互联网
+## 9. 连接互联网
 
 Arch Linux 镜像只提供一个基本的安装环境，软件包仍需要连接互联网后下载。连接互联网有多种方式，包括
 
@@ -391,7 +393,7 @@ rtt min/avg/max/mdev = 194.013/204.384/217.666/9.873 ms
 > \6. 你可以 ping 通一个公网 IP 地址（例如 9.9.9.9，即 Quad9 的 DNS 服务器）。
 > \7. 检查是否能解析域名（例如 [http://archlinux.org](https://link.zhihu.com/?target=http%3A//archlinux.org)）。[[12\]](https://zhuanlan.zhihu.com/p/596227524#ref_12)
 
-## 10 更新系统时钟
+## 10. 更新系统时钟
 
 在互联网连接之后，systemd-timesyncd 服务将自动校准系统时间。请输入如下命令确定时间的准确性。设置时间的目的之一是便于安装软件包时验证签名。
 
@@ -407,7 +409,7 @@ root@archiso ~ # timedatectl
 root@archiso ~ # date MMDDhhmmYY  # 如 date 1231080023 可以将时间设定为 2023 年 12 月 31 日 08:00
 ```
 
-## 11 磁盘分区
+## 11. 磁盘分区
 
 **注意：**
 
@@ -666,7 +668,7 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
-## 12 分区格式化
+## 12. 分区格式化
 
 创建好的分区必须格式化为一种文件系统，Linux 上常见的文件系统有 ext4，btrfs，xfs 等。建议第一次安装的读者使用 ext4 文件系统。btrfs 提供子卷、写时复制、压缩、快照等高级功能，适合更加熟练的用户。
 
@@ -712,7 +714,7 @@ root@archiso ~ # mkfs.ext4 /dev/sda5
 root@archiso ~ # mkfs.ext4 /dev/sda6
 ```
 
-## 13 挂载分区
+## 13. 挂载分区
 
 ### 13.1 全新安装 Arch Linux 的挂载分区
 
@@ -762,7 +764,7 @@ root@archiso ~ # mount --mkdir /dev/sda1 /mnt/efi
 root@archiso ~ # mount --mkdir /dev/sda6 /mnt/home
 ```
 
-## 14 建立交换文件
+## 14. 建立交换文件
 
 交换文件相当于 Windows 中的虚拟内存，也就是利用硬盘空间充当内存。当内存**相对**不足时，部分内存中的内容会交换到硬盘中，从而释放内存。关于 swap 的重要性，有两篇不错的文章，推荐读者阅读。
 
@@ -802,7 +804,7 @@ root@archiso ~ # mkswap -U clear /mnt/swapfile
 root@archiso ~ # swapon /mnt/swapfile
 ```
 
-## 15 选择软件仓库镜像
+## 15. 选择软件仓库镜像
 
 在 Arch Linux 中，软件仓库就好比手机中的应用商店，软件包是通过软件仓库进行分发的。软件仓库镜像是软件仓库的复制品，同一个软件仓库可以在世界各地建立软件仓库镜像，以便于不同地区的用户下载。因此选择一个合适的软件仓库镜像对于您更新软件包数据库以及下载软件包的速度有很大影响。
 
@@ -882,7 +884,7 @@ Server = https://geo.mirror.pkgbuild.com/$repo/os/$arch
 
 随后输入 `Ctrl+O` 保存，`Ctrl+X` 退出。
 
-## 16 安装基础包
+## 16. 安装基础包
 
 终于到了安装环节。我们使用 pacstrap 安装 base，linux，linux-firmware 三个软件包，它们分别是基础包组，linux 内核和驱动程序。此外，如果您使用 2019 年及以后生产的笔记本电脑，可能需要安装 sof-firmware，否则可能没有声音[[23\]](https://zhuanlan.zhihu.com/p/596227524#ref_23)。
 
@@ -902,7 +904,7 @@ root@archiso ~ # pacman-key --populate
 root@archiso ~ # pacman -Sy archlinux-keyring  # 更新 archlinux-keyring
 ```
 
-## 17 fstab
+## 17. fstab
 
 fstab[[25\]](https://zhuanlan.zhihu.com/p/596227524#ref_25) 是一个系统文件，决定了系统启动时如何自动挂载分区。没有 fstab，系统将找不到根分区，从而无法启动。fstab 有一定的格式，我们用一个例子说明 fstab 文件的格式。
 
@@ -941,7 +943,7 @@ root@archiso ~ # genfstab -U /mnt >> /mnt/etc/fstab
 root@archiso ~ # cat /mnt/etc/fstab
 ```
 
-## 18 chroot
+## 18. chroot
 
 我们使用 arch-chroot 工具切换到新安装的系统，以后的操作就可以在新安装的系统中完成了。
 
@@ -949,7 +951,7 @@ root@archiso ~ # cat /mnt/etc/fstab
 root@archiso ~ # arch-chroot /mnt
 ```
 
-## 19 时区
+## 19. 时区
 
 我们设置时区的软链接。**在中国的读者请使用上海时间，在其他地区的读者可以在输入“/usr/share/zoneinfo/”之后按下`Tab`键查看可选的时区。**
 
@@ -963,7 +965,7 @@ root@archiso ~ # arch-chroot /mnt
 [root@archiso ~]# hwclock --systohc
 ```
 
-## 20 本地化
+## 20. 本地化
 
 我们将设置 locale[[26\]](https://zhuanlan.zhihu.com/p/596227524#ref_26) 、终端键盘布局和字体[[27\]](https://zhuanlan.zhihu.com/p/596227524#ref_27)。locale 决定了系统的语言和格式，包括终端显示哪种语言，数字、时间和货币以哪国的格式显示等等。
 
@@ -1037,7 +1039,7 @@ LANG=en_US.UTF-8
 FONT=ter-132b
 ```
 
-## 21 网络配置
+## 21. 网络配置
 
 请编辑 hostname[[28\]](https://zhuanlan.zhihu.com/p/596227524#ref_28)文件，设置主机名。**这将成为您计算机的名字**。[这篇文章](https://link.zhihu.com/?target=https%3A//www.rfc-editor.org/rfc/rfc1178)为设置主机名提供了一些建议。
 
@@ -1059,7 +1061,7 @@ NetworkManager 附带一个守护程序。在 Arch Linux 中，守护程序由 s
 [root@archiso ~]# systemctl enable NetworkManager.service
 ```
 
-## 22 root 密码
+## 22. root 密码
 
 root 用户是 Linux 系统中权限最高的用户，有些敏感的操作必须通过 root 用户进行，比如使用 pacman。我们之前进行所有的操作也都是以 root 用户进行的。也正是因为 root 的权限过高，如果使用不当会造成安全问题，所以我们在下一篇文章中会新建一个普通用户来进行日常的操作。在这里我们需要为 root 用户设置一个密码。[[29\]](https://zhuanlan.zhihu.com/p/596227524#ref_29)
 
@@ -1072,9 +1074,9 @@ Retype new password:
 passwd: password updated successfully
 ```
 
-## 23 引导加载程序
+## 23. 引导加载程序
 
-为了启动 Arch Linux，必须使用一个引导加载程序，笔者推荐使用 GRUB[[30\]](https://zhuanlan.zhihu.com/p/596227524#ref_30)。再次声明，本教程只针对 UEFI 启动模式的计算机，如果您的计算机使用 BIOS 启动模式，[请参阅此教程](https://link.zhihu.com/?target=https%3A//www.viseator.com/2017/05/17/arch_install/)。关于 Arch Linux 启动的过程，参见 [ArchWiki](https://link.zhihu.com/?target=https%3A//wiki.archlinux.org/title/Arch_boot_process)。这也是安装过程中比较复杂的一步。
+为了启动 Arch Linux，必须使用一个引导加载程序，笔者推荐使用 GRUB[[30\]](https://zhuanlan.zhihu.com/p/596227524#ref_30)。再次声明，本教程只针对 UEFI 启动模式的计算机，如果您的计算机使用 BIOS 启动模式，[请参阅此教程](https://www.viseator.com/2017/05/17/arch_install/)。关于 Arch Linux 启动的过程，参见 [ArchWiki](https://link.zhihu.com/?target=https%3A//wiki.archlinux.org/title/Arch_boot_process)。这也是安装过程中比较复杂的一步。
 
 ### 23.1 微码
 
@@ -1166,7 +1168,7 @@ Installation finished. No error reported.
 [root@archiso ~]# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## 24 重启
+## 24. 重启
 
 首先，退出 chroot 环境。
 
