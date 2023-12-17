@@ -97,7 +97,7 @@ int result2 = f2(10, 20);    //result2 == 30
 
 ## 五、Lambda表达式的限定符
 
-Lambda表达式的限定符值为mutable，其意义是可以在函数体内修改按值捕获的变量；如果不需要此操作，则可以省略此项。
+Lambda表达式的限定符值为`mutable`，其意义是可以在函数体内修改按值捕获的变量；如果不需要此操作，则可以省略此项。
 
 ```
 int a = 10;
@@ -107,4 +107,22 @@ auto f1 = [a]() { a++; } //报错
 
 //使用mutable修饰
 auto f2 = [a]() mutable { a++; } //成功
+```
+
+## 六、Lambda表达式的异常说明符
+
+Lambda表达式的异常说明符值为`noexcept`，其意义是指明表达式不会抛出异常；如果不需要此操作，则可以省略此项。
+
+```
+//未用noexcept修饰
+auto f1 = [](int x){    
+    if(x == 0) throw(0); //成功
+    return x;
+}
+
+//使用noexcept修饰
+auto f2 = [](int x) noexcept {
+    if(x == 0) throw(0); //报错
+    return x;
+}
 ```
