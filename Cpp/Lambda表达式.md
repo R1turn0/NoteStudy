@@ -126,3 +126,17 @@ auto f2 = [](int x) noexcept {
     return x;
 }
 ```
+
+## 七、Lambda表达式的返回值类型
+
+用`-> type`可以指定lambda表达式返回值类型；如果不指定返回类型，则编译器会根据代码实现为函数推导一个返回类型；如果没有返回值，则可忽略此部分。
+
+```
+//指定返回值类型
+auto f1 = []() -> int { return 1; };
+int result1 = f1();    //result == 1
+
+//不指定返回值类型
+auto f2 = []() { return 1; };
+int result2 = f2();    //result == 1
+```
