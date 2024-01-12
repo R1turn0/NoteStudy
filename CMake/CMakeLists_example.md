@@ -40,7 +40,10 @@ else()
     # 可以根据需要添加其他系统的处理
 endif()
 
-set(ROOTDIR ${CMAKE_SOURCE_DIR})
+# 控制是否在构建期间使用安装时的 RPATH 信息
+set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
+# 设置安装后二进制文件的运行时搜索路径（RPATH）
+set(CMAKE_INSTALL_RPATH "\${ORIGIN}/lib")
 
 link_directories(${CMAKE_SOURCE_DIR}/lib/${PLATFORM})
 #link_directories(${CMAKE_SOURCE_DIR}/lib)
