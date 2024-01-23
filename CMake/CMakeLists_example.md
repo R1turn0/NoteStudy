@@ -45,6 +45,10 @@ set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 # 设置安装后二进制文件的运行时搜索路径（RPATH）
 set(CMAKE_INSTALL_RPATH "\${ORIGIN}/lib")
 
+# ======== CMAKE_EXE_LINKER_FLAGS 用于设置可执行文件的链接器标志 ========
+# 用于将C++运行时库（libstdc++）和C运行时库（libgcc）静态链接到可执行文件中
+# set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+
 # ======== 查找第三方库 ========
 # find_pakage(ThirdPartyLib REQUIRED)
 
