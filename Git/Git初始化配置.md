@@ -186,3 +186,31 @@ $ ssh-add -l -E sha256
 对比GitHub设置中公钥指纹是否一致
 
 > https://docs.github.com/en/authentication/troubleshooting-ssh/error-permission-denied-publickey
+
+
+
+###  ssh: connect to host github.com port 22: Connection timed out
+
+现象：命令行输入`ssh -T git@github.com`后提示`ssh: connect to host github.com port 22: Connection timed out`
+
+原因：
+
+1. 22端口被防火墙拒绝了，可以尝试连接GitHub的443端口
+2. github.com不会自动的转换为ssh.github.com
+
+解决方式：
+
+在rsa公私钥生成的路径`~/.ssh`下边的`config`文件（如果没有则创建一个），输入以下内容：
+
+```
+Host github.com
+HostName ssh.github.com		# 2.
+User git
+Port 443					# 1.
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+```
+
+### 可以使用`ssh -v`命令查看ssh链接过程中发生了什么
+
+`-v`表示verbose，会打出详细日志
