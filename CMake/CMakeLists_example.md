@@ -19,7 +19,12 @@ set(CMAKE_CXX_STANDARD 11)
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
-# ======== set platform ========
+# ======== 设置构建类型 ========
+if(NOT CMAKE_BUILD_TYPE) # 如果用户未指定，则默认为Release
+    set(CMAKE_BUILD_TYPE Release) # 等同于cmake的 -DCMAKE_BUILD_TYPE=Debug 参数
+endif()
+
+# ======== 设置平台 ========
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
 	message(STATUS "Building for 64-bit architecture")
     set(PLATFORM x64)
