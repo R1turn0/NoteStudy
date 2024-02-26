@@ -20,3 +20,5 @@ std::cout << "0x"<< std::hex << std::setiosflags(std::ios::uppercase) << std::se
 | setiosflags(ios::lowercase)  | 16进制小写输出   |
 | setiosflags(ios::showpoint)  | 强制显示小数点   |
 | setiosflags(ios::showpos)    | 强制显示符号     |
+
+`std::setfill('0')`设置其他字符填充 如果输出字符的宽度不够 则以设置的字符输出
