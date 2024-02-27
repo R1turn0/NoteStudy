@@ -22,3 +22,5 @@ std::cout << "0x"<< std::hex << std::setiosflags(std::ios::uppercase) << std::se
 | setiosflags(ios::showpos)    | 强制显示符号     |
 
 `std::setfill('0')`设置其他字符填充 如果输出字符的宽度不够 则以设置的字符输出
+
+`std::setw(2)`设置输出宽度,如果宽度设置为3 则输出0x00A
