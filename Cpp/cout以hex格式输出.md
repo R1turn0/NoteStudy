@@ -15,7 +15,7 @@ std::cout << "0x"<< std::hex << std::setiosflags(std::ios::uppercase) << std::se
 | setiosflags(ios::scientific) | 指数表示         |
 | setiosflags(ios::left)       | 左对齐           |
 | setiosflags(ios::right)      | 右对齐           |
-| setiosflags(ios::skipws      | 忽略前导空白     |
+| setiosflags(ios::skipws)     | 忽略前导空白     |
 | setiosflags(ios::uppercase)  | 16进制数大写输出 |
 | setiosflags(ios::lowercase)  | 16进制小写输出   |
 | setiosflags(ios::showpoint)  | 强制显示小数点   |
