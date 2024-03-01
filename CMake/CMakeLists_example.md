@@ -2,7 +2,7 @@
 
  ## Main程序
 
-```
+```cmake
 cmake_minimum_required(VERSION 3.24)
 
 project(Project_Name)
@@ -25,12 +25,31 @@ if(NOT CMAKE_BUILD_TYPE) # 如果用户未指定，则默认为Release
 endif()
 
 # ======== 设置平台 ========
+# 第一种方式：检测系统的指针的大小判断目标系统是32位还是64位
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
 	message(STATUS "Building for 64-bit architecture")
     set(PLATFORM x64)
 else()
 	message(STATUS "Building for 32-bit architecture")
     set(PLATFORM x86)
+endif()
+
+# 第二种方式：通过 CMake 的变量来判断目标系统的平台以及架构信息
+if (CMAKE_C_LIBRARY_ARCHITECTURE MATCHES "(arm)|(aarch64)" OR OSX_ARCHITECTURES MATCHES "arm" OR CMAKE_ANDROID_ARCH_ABI MATCHES "(arm)|(aarch64)")
+    if (${CMAKE_SIZEOF_VOID_P} EQUAL 4)
+        set(PLATFORM "a32")
+    else()
+        set(PLATFORM "a64")
+    endif()
+
+    set(arch_comm "arm")
+else()
+    if (${CMAKE_SIZEOF_VOID_P} EQUAL 4)
+        set(PLATFORM "x86")
+    else()
+        set(PLATFORM "x64")
+    endif()
+    set(arch_comm "x86")
 endif()
 
 # ======== Judgment to build project system ========
@@ -103,7 +122,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 
 ## 编译静态库与动态库
 
-```
+```cmake
 cmake_minimum_required(VERSION 3.20)
 project(LIBDoubleArrayAverage C)
 
