@@ -1,4 +1,4 @@
-# CMakeLists编译项目例子
+# CMakeLists.txt
 
  ## Main程序
 
@@ -21,7 +21,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 # ======== 设置构建类型 ========
 if(NOT CMAKE_BUILD_TYPE) # 如果用户未指定，则默认为Release
-    set(CMAKE_BUILD_TYPE Release) # 等同于cmake的 -DCMAKE_BUILD_TYPE=Debug 参数
+    set(CMAKE_BUILD_TYPE Debug) # 等同于cmake的 -DCMAKE_BUILD_TYPE=Debug 参数
 endif()
 
 # ======== 设置平台 ========
