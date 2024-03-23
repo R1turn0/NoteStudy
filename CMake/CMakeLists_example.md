@@ -72,6 +72,9 @@ set(CMAKE_INSTALL_RPATH "\${ORIGIN}/lib")
 # ======== CMAKE_EXE_LINKER_FLAGS 用于设置可执行文件的链接器标志 ========
 # 用于将C++运行时库（libstdc++）和C运行时库（libgcc）静态链接到可执行文件中
 # set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
+# set(CMAKE_EXE_LINKER_FLAGS "-static")
+# 或者在add_executable之后使用target_link_libraries(GitAmendDateTool -static)
 
 # ======== 查找第三方库 ========
 # find_pakage(ThirdPartyLib REQUIRED)
