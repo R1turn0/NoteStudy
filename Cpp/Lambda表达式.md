@@ -22,7 +22,7 @@ Lambda表达式的基本语法结构如下：
  下面是一个简单的Lambda表达式： 
 
 ```
-[](int x, int y){ return x + y; }
+[](int x, int y) -> int { return x + y; };
 ```
 
 这个Lambda表达式可以看作是一个没有函数名的函数，接受两个整型参数，并返回它们的和。应用实例如下：
