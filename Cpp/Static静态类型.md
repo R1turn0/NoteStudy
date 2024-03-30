@@ -19,8 +19,7 @@ static修饰局部变量时，使得被修饰的变量成为静态变量，存�
 ```c++
 #include <stdio.h>
 
-void fn(void)
-{
+void fn(void) {
     int n = 10;
 
     printf("n=%d\n", n);
@@ -28,8 +27,7 @@ void fn(void)
     printf("n++=%d\n", n);
 }
 
-void fn_static(void)
-{
+void fn_static(void) {
     static int n = 10;
 
     printf("static n=%d\n", n);
@@ -37,8 +35,7 @@ void fn_static(void)
     printf("n++=%d\n", n);
 }
 
-int main(void)
-{
+int main(void) {
     fn();
     printf("--------------------\n");
     fn_static();
@@ -53,7 +50,7 @@ int main(void)
 
 运行结果
 
-```
+```shell
 -> % ./a.out 
 n=10
 n++=11
