@@ -1,5 +1,7 @@
 # C++ Lambda表达式
 
+[TOC]
+
 ## 一、Lambda表达式的介绍
 
 c++11引入了Lambda表达式，使得开发人员可以更方便的创建匿名函数。Lambda表达式是c++语言的一个重要特性，它可以作为函数对象使用，可以用来替代一些繁琐的函数声明和定义。
@@ -165,3 +167,62 @@ auto f2 = [](int x, int y) { return x + y; };
 2. 复杂性：Lambda表达式可以包含复杂的逻辑和控制流，使得代码难以维护和调试。
 3. 性能：Lambda表达式可能会产生额外的开销，例如变量捕获和函数调用的开销。
 
+## 十、Lambda表达式的递归
+
+由于lambda表达式的匿名特性，无法直接在lambda内部递归调用lambda，需要另寻其道来解决该问题
+
+### 1. 使用 `std::function`
+
+`std::function` 可以把Lambda包装起来，相当于赋予了其一个函数名，在通过引用捕获并实现递归调用，实现如下： 
+
+```c++
+#include <functional>
+const auto &sum1 = [](const int &n) {
+    std::function<int(const int &)> s;
+    s = [&](const int &n) {
+        return n == 1 ? 1 : n + s(n - 1);
+    };
+    return s(n);
+};
+```
+
+### 2. 将Lambda作为参数
+
+```c++
+const auto &sum2 = [](const int &n) {
+    const auto &s = [&](auto &&self, const int &x) -> int {
+        return x == 1 ? 1 : x + self(self, x - 1);
+    };
+    return s(s, n);
+};
+```
+
+注意到，调用s(s,n)时，我们把Lambda表达式本身作为了参数传入来实现递归调用
+
+### 3. 使用Y组合子
+
+构造一个Y组合子如下：
+
+```c++
+const auto &y = [](const auto &f) {
+    return [&](const auto &x) {
+        return x(x);
+    }([&](const auto &x) -> std::function<int(int)> {
+        return f([&](const int &n) {
+            return x(x)(n);
+        });
+    });
+};
+```
+
+再实现一个求和函数的高阶函数如下：
+
+```c++
+const auto &sum3 = [](const auto &f) {
+    return [=](const int &n) {
+        return n == 1 ? 1 : n + f(n - 1);
+    };
+};
+```
+
+然后连接即可
